@@ -4,13 +4,13 @@
 using namespace std;
 
 bool compare(string a, string b) {
-	//±æÀÌ°¡ °°À¸¸é »çÀü¼ø
+	//ê¸¸ì´ê°€ ê°™ìœ¼ë©´ ì‚¬ì „ìˆœ
 	if (a.length() == b.length()) {
 		return a < b;
 	}
-	//±æÀÌ ¼ø
+	//ê¸¸ì´ ìˆœ
 	else {
-		return a.length() < b.length();
+		return (a.length() < b.length());
 	}
 }
 
@@ -23,8 +23,12 @@ int main() {
 
 	vector<string> word;
 	string temp;
-	for (int i = 0; i < n; i++)
-		cin >> word[i];
+
+	for (int i = 0; i < n; i++) {
+		string s;
+		cin >> s;
+		word.push_back(s);
+	}
 
 	sort(word.begin(), word.end(), compare);
 
@@ -33,7 +37,4 @@ int main() {
 		cout << word[i] << '\n';
 		temp = word[i];
 	}
-
-
-
 }
